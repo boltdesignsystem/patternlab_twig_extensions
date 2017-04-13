@@ -3,7 +3,7 @@
 namespace Pega\TwigExtensions;
 
 /**
- * Loads twig customizations from a _twig-components directory.
+ * Loads twig customizations from a dist directory.
  */
 class ExtensionLoader {
 
@@ -44,9 +44,9 @@ class ExtensionLoader {
    *   The type to load all plugins for.
    */
   static protected function loadAll($type) {
-    foreach (scandir(__DIR__ . '/../_twig-components/' . $type) as $file) {
+    foreach (scandir(__DIR__ . '/../dist/' . $type) as $file) {
       if ($file[0] != '.' && $file[0] != '_') {
-        static::load($type, __DIR__ . '/../_twig-components/' . $type . '/' . $file);
+        static::load($type, __DIR__ . '/../dist/' . $type . '/' . $file);
       }
     }
   }
