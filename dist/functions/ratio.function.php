@@ -2,7 +2,7 @@
 
 $function = new Twig_SimpleFunction('ratio', function ($fileName) {
 
-  if (is_class('Drupal')) {
+  if (class_exists('Drupal')) {
         $filePath = getcwd() . $fileName;
 
         if (file_exists($filePath)){
